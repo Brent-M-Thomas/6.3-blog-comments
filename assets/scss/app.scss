@@ -3,3 +3,29 @@
 @import 'bourbon';
 @import 'neat';
 @import 'border-box';
+
+body {
+    @include outer-container(12);
+}
+
+#target {
+    @include span-columns(10);
+    @include shift(1);
+    height: 7rem;
+    background: blue;
+}
+
+.new-comment {
+    display: block;
+    width: 90%;
+    margin: 1.5% 5%;
+    height: 3rem;
+    font-size: 2rem;
+}
+.email {
+    display: block;
+    width: 80%;
+    height: 2rem;
+    margin-left: 10%;
+    font-size: 1.5rem;
+}
