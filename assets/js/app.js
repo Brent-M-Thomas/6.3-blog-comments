@@ -1,6 +1,6 @@
 var CommentView = Backbone.View.extend({
   tagName: 'li',
-  template: AppTemplates.comment,
+  template: AppTemplates.post,
 
   initialize: function() {
     this.listenTo(this.model, 'change', this.render);
@@ -11,7 +11,7 @@ var CommentView = Backbone.View.extend({
     this.$el.html(html);
 
     return this;
-  }
+  },
 });
 
 var AppView = Backbone.View.extend({
@@ -27,7 +27,7 @@ var AppView = Backbone.View.extend({
   },
 
   events: {
-    'submit form': 'addComment'
+    'submit form': 'addComment',
   },
 
   render: function() {
@@ -45,10 +45,12 @@ var AppView = Backbone.View.extend({
   addComment: function(ev) {
     ev.preventDefault();
 
-    var title = this.$el.find('input').val();
-    this.collection.create({title: title});
-    this.$el.find('input').val('');
-  }
+    var comment = this.$el.find('.new-comment').val();
+    var email = this.$el.find('.email').val();
+    this.collection.create({comment: comment, email: email});
+    this.$el.find('.new-comment').val('');
+    this.$el.find('.email').val('');
+  },
 });
 
 var comments = new CommentThread();
