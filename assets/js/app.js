@@ -28,7 +28,7 @@ var AppView = Backbone.View.extend({
 
   events: {
     'submit form': 'addComment',
-    'click add-new-comment': 'newComment',
+    'click .add-new-comment': 'newComment',
   },
 
   render: function() {
