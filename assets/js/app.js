@@ -28,6 +28,7 @@ var AppView = Backbone.View.extend({
 
   events: {
     'submit form': 'addComment',
+    'click add-new-comment': 'newComment',
   },
 
   render: function() {
@@ -51,6 +52,11 @@ var AppView = Backbone.View.extend({
     this.$el.find('.new-comment').val('');
     this.$el.find('.email').val('');
   },
+
+  newComment: function() {
+    this.$('.new-comment-window').slideDown();
+  },
+
 });
 
 var comments = new CommentThread();
