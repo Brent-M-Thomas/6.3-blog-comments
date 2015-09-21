@@ -3,3 +3,43 @@
 @import 'bourbon';
 @import 'neat';
 @import 'border-box';
+
+body {
+    @include outer-container(12);
+}
+label {
+    @include span-columns(2);
+    @include shift(5);
+    color: white;
+    text-align: center;
+    font-family: monospace;
+    font-size: 2rem;
+}
+button {
+    float:  right;
+}
+
+#target {
+    @include span-columns(10);
+    @include shift(1);
+    // height: 30%;
+    background: #867979;
+}
+
+.new-comment {
+    display: block;
+    width: 90%;
+    margin: 1.5% 5%;
+    height: 20%;
+    font-size: 2rem;
+}
+.email {
+    display: block;
+    width: 80%;
+    height: 2rem;
+    margin-left: 10%;
+    font-size: 1.5rem;
+}
+.new-comment-window {
+    display: none;
+}

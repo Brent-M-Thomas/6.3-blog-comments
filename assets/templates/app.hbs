@@ -1,0 +1,20 @@
+<div class="comment">
+    <button class="add-new-comment">Add Comment</button>
+    <div class="new-comment-window">
+        <form>
+            <label for="new-comment">Comment</label>
+            <textarea type="text" class="new-comment" placeholder="Add your comment here"></textarea>
+            <label for="email">Email</label>
+            <input type="text" class="email" placeholder="email">
+            <button>Submit</button>
+        </form>
+    </div>
+    <div class="thread">
+        <ul class="comment-thread">
+            {{#each this as |post|}}
+
+            {{/each}}
+        </ul>
+
+    </div>
+</div>
